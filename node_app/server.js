@@ -9,8 +9,12 @@ const port = 3009;
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Server up and running..');
+app.post('/echo', (req, res) => {
+    res.json({ status: 'success', message: req.body });
+});
+
+app.use((req, res) => {
+    res.status(400).send('Undefined route.');
 });
 
 app.listen(port, () => {

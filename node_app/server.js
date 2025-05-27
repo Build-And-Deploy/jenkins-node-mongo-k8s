@@ -7,8 +7,12 @@ const app = express();
 const port = 3009;
 
 app.use(cors());
-app.express(JSON);
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Server up and running..');
+});
 
 app.listen(port, () => {
-    console.log(`Running on http://localhost:`)
+    console.log(`Running on http://localhost:${port}`)
 });

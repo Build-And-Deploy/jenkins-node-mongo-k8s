@@ -8,7 +8,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: jenkins-pvc
 spec:
-  accessMode:
+  accessModes:
     - ReadWriteOnce
   resources:
     requests:

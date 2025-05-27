@@ -1,0 +1,6 @@
+# PersistentVolumeClaim
+
+apiVersion:
+kind:
+metadata:
+spec:

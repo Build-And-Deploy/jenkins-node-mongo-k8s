@@ -1,6 +1,15 @@
 # PersistentVolumeClaim
+## PVC is a users request for persistent storage in a cluster.
+## Abstracts how storage is provided, letting users request storage
+## without knowing the underlying implementation
 
-apiVersion:
-kind:
+apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
+  name: jenkins-pvc
 spec:
+  accessMode:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

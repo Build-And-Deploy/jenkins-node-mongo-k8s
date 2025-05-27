@@ -1,6 +1,18 @@
 # Service
+## Provides a stable network endpoint to access one or more pods.
+## Routes traffic to pods based on label selectors, even as IP's change.
+## Allows for load balancing traffic between matching pods.
 
-apiVersion:
-kind:
+apiVersion: v1
+kind: Service
 metadata:
+  name: jenkins-service
 spec:
+  type: NodePort
+  selector: 
+    app: jenkins
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30000
